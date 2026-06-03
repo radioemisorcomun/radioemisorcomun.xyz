@@ -1,0 +1,115 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #111;
+  --white: #fff;
+  --gray:  #888;
+  --blue:  #0000ee;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono:  "Courier New", Courier, monospace;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 0 clamp(1.5rem, 6vw, 6rem);
+}
+
+a { color: var(--blue); }
+a:visited { color: #551a8b; }
+
+/* ---- HEADER ---- */
+header {
+  border-bottom: 1px solid var(--black);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+}
+
+/* ---- MAIN ---- */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 6rem 0;
+}
+
+@media (max-width: 640px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 3rem 0;
+    gap: 3rem;
+  }
+}
+
+/* ---- TITLE ---- */
+.title-block h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.title-block .subtitle {
+  margin-top: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+}
+
+/* ---- FIGURE ---- */
+.figure-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+figure {
+  width: 100%;
+  max-width: 300px;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray);
+  letter-spacing: 0.03em;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  border-top: 1px solid var(--black);
+  padding: 1rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray);
+}
