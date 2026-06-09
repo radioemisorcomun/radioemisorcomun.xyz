@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radio Emisor Común</title>
-  <!-- <link rel="stylesheet" href="style.css" /> -->
-  <style>
-  .overlay {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Radio Emisor Común</title>
+
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.livestream {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+.overlay {
   position: fixed;
   inset: 0;
 
@@ -15,19 +34,41 @@
   justify-content: center;
   align-items: center;
 
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(4px);
-}
-  </style>
-</head>
-<body>
-  <iframe class="livestream"></iframe>
+  color: white;
+  text-align: center;
 
-  <div class="overlay">
-    <h1>Radio Emisor Común</h1>
-    <p>proyecto cibernético-analógico-sonoro</p>
-  </div>
-</body>
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+
+  pointer-events: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.9;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+</style>
+</head>
+
+<body>
+
+<iframe
+  class="livestream"
+  src="https://www.youtube.com/embed/9tpQr8U3-8E?autoplay=1&mute=1"
+  title="Radio Emisor Común"
+  allow="autoplay; encrypted-media"
+  allowfullscreen>
+</iframe>
+
+<div class="overlay">
+  <h1>Radio<br>Emisor<br>Común</h1>
+  <p>proyecto cibernético-analógico-sonoro</p>
+</div>
 
 </body>
 </html>
